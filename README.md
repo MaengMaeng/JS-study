@@ -13,6 +13,24 @@ for(let i = 0; i < 5; i++){
 }
 ```
 
+- 정렬
+```
+let arr = [5, 4, 3, 2, 1];
+arr.sort();
+console.log(arr); // 1 2 3 4 5
+```
+
+- 배열 복사
+```
+let a = ['a', 'b', 'c'];
+let b = a.splice();
+
+a[0] = 1;
+
+console.log(a); // 1 b c
+console.log(b); // a b c
+```
+
 ## Math
 - 최대값 찾기
 ```
