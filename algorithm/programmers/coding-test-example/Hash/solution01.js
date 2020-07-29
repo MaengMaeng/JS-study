@@ -17,7 +17,7 @@ function solution(participant, completion) {
     return answer.pop();
 }
 
-let test1 = ["leo", "kiki", "eden"];
-let test2 = ["eden", "kiki"];
+// let test1 = ["leo", "kiki", "eden"];
+// let test2 = ["eden", "kiki"];
 
-console.log(solution(test1, test2));
+// console.log(solution(test1, test2));

@@ -31,6 +31,7 @@ console.log(a); // 1 b c
 console.log(b); // a b c
 ```
 
+
 ## Math
 - 최대값 찾기
 ```
@@ -42,4 +43,10 @@ console.log(Math.max(i, j)); // j = 10
 ```
 let arr = [0, 1, 2, 3, 4, 5];
 console.log(Math.max.apply(null, arr)); // 5
+```
+
+
+## Map
+```
+let m = new Map();
 ```
