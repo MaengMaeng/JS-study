@@ -20,6 +20,15 @@ arr.sort();
 console.log(arr); // 1 2 3 4 5
 ```
 
+- 정렬2
+```
+let arr = [5, 4, 3, 2, 1];
+arr.sort((a,b) => {
+    return a < b ? -1 : a > b ? 1 : 0;
+})
+console.log(arr); // 1 2 3 4 5
+```
+
 - 배열 복사
 ```
 let a = ['a', 'b', 'c'];
