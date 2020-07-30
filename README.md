@@ -29,10 +29,17 @@ arr.sort((a,b) => {
 console.log(arr); // 1 2 3 4 5
 ```
 
+- 정렬3
+```
+let arr = [5, 4, 3, 2, 1];
+arr.sort((a,b) => a-b);
+console.log(arr); // 1 2 3 4 5
+```
+
 - 배열 복사
 ```
 let a = ['a', 'b', 'c'];
-let b = a.splice();
+let b = a.slice();
 
 a[0] = 1;
 
