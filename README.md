@@ -66,3 +66,18 @@ console.log(Math.max.apply(null, arr)); // 5
 ```
 let m = new Map();
 ```
+
+
+## reduce()
+```
+let array = [1,2,3,4];
+
+let reducer1 = (a, c) => a + c;
+console.log(array.reduce(reducer1)); // 10
+
+let reducer2 = (a, c) => a * c;
+console.log(array.reduce(reducer2)); // 24
+
+console.log(array.reduce(reducer2, 5)); // 5 * 1 * 2 * 3 * 4 = 120
+```
+- reduce의 첫번째 인자는 reducer, 두번째 인자는 초기값
