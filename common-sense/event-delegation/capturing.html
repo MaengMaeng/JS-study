@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <div class="first">
+            <div class="second">
+                <div class="third">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    .first{
+        background-color: red;
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+    }
+
+    .second{
+        background-color: blue;
+        width: 300px;
+        height: 300px;
+        margin:50px;
+        display: inline-block;
+    }
+
+    .third{
+        background-color: green;
+        width: 200px;
+        height: 200px;
+        margin:50px;
+        display: inline-block;
+    }
+</style>
+
+<script>
+    var divs = document.querySelectorAll('div');
+    divs.forEach(function(div) {
+        div.addEventListener('click', logEvent, {capture:true});
+    });
+
+    function logEvent(event) {
+        console.log(event.currentTarget.className);
+    }
+</script>
