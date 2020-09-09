@@ -1,10 +1,9 @@
 function foo1(name) {
     var _name = name;
-    var say = function() {
+
+    this.say = function() {
         console.log(_name);
     }
-
-    return {say};
 }
 
 function foo2(name){
@@ -15,7 +14,7 @@ foo2.prototype.say = function(){
     console.log(this._name);
 }
 
-var f1 = foo1('foo1');
+var f1 = new foo1('foo1');
 var f2 = new foo2('foo2');
 
 f1.say();

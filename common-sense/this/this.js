@@ -1,23 +1,25 @@
-// const obj = function() {
-//     var x = 'x';
-//     function y () {
-//         console.log(x);
-//     }
+function 외부함수(){
+    console.log('함수 호출', this === global);
 
-//     return {y};
-// }
+    function 내부함수(){
+        console.log('내부 함수', this === global);
+    }
 
-// const newObj = obj();
-
-// newObj.y();
-
-const obj2 = {
-    name: 'foo'
-};
-
-function foo(args){
-    console.log(this.name, args);
+    내부함수();
 }
 
-console.log(foo.bind(obj2));
-foo.bind(obj2)(1);
+외부함수();
+
+var 오브젝트 = {
+    메소드: function(){
+        console.log('메소드', this === global);
+
+        function 메소드_내부함수(){
+            console.log('메소드 내부함수', this === global);
+        }
+
+        메소드_내부함수();
+    }
+};
+
+오브젝트.메소드();
