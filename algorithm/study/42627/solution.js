@@ -4,7 +4,13 @@ function solution(jobs) {
     const schedule = [];
     const jobsArray = jobs.slice();
     
-    jobsArray.sort((a,b) => a[0] - b[0]);
+    jobsArray.sort((a,b) => {
+        if(a[0] - b[0] === 0){
+            return a[1] - b[1];
+        }
+        
+        return a[0] - b[0]
+    });
     const length = jobs.length;
 
     schedule.push(jobsArray.shift());
@@ -14,10 +20,9 @@ function solution(jobs) {
     while(schedule.length !== 0){
         // 일 수행
         let job = schedule.shift();
-        
+    
         answer += (job[0] > time ? 0 : time - job[0]) + job[1];
         time += (job[0] > time ? job[0] - time : 0) + job[1];
-        console.log(answer, time);
 
 
         // 일 중 들어온 job
