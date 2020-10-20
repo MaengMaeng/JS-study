@@ -1,6 +1,7 @@
 function solution(n, edge) {
     let answer = 0, dist;
 
+    // 그래프를 그리고
     const graph = [];
     for(let i = 0; i < n; i++){
         graph.push([]);
@@ -10,6 +11,7 @@ function solution(n, edge) {
         graph[edge[i][1] - 1].push(edge[i][0] - 1);
     }
 
+    // 거리 저장하는 배열
     const dists = Array.from({length : n}, () => Infinity);
     dists[0] = 1;
 
