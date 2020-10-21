@@ -12,6 +12,8 @@ function solution(land, height) {
     const nodes = [];
     const n = land.length;
 
+    // 간선으로 만드는 부분
+    // weight가 height이하면 0으로 처리
     for(let x = 0; x < n; x++){
         for(let y = 0; y < n; y++){
             let currentVertex = x * n + y;
@@ -30,6 +32,7 @@ function solution(land, height) {
         }
     }
 
+    // weight를 기준으로 오름차순 정렬
     nodes.sort((a,b) => a.weight - b.weight);
     
     const find = (node) => {
