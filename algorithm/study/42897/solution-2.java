@@ -15,29 +15,15 @@ class Solution {
     }
     
     public int dp(int[] money) {
-        int length = money.length;
-
-        int[] dp = new int[length];
-        boolean[] check = new boolean[length];
+        int[] dp = new int[money.length];
         
         dp[0] = money[0];
-        check[0] = true;
         dp[1] = money[0] > money[1] ? money[0] : money[1];
-        check[1] = money[1] > money[0];
         		
-        for(int i = 2; i < length; i++) {
-        	int a = dp[i - 1];
-        	int b = dp[i - 2] +  money[i];
-        	
-        	if(a > b) {
-        		dp[i] = a;
-        	}
-        	else {
-        		dp[i] = b;
-        		check[i] = true;
-        	}
+        for(int i = 2; i < money.length; i++) {
+            dp[i] = (dp[i - 1] > (dp[i - 2] + money[i])) ? dp[i - 1] : (dp[i - 2] +  money[i])
         }
                 
-        return dp[length - 1];
+        return dp[money.length - 1];
     }
 }
