@@ -6,24 +6,13 @@ public class DoublePriorityQueue {
         for(String op : operations) {
         	String[] operation = op.split(" ");
         	
-        	
         	if(operation[0].equals("I")) {
         		minQueue.add(Integer.valueOf(operation[1]));
         		maxQueue.add(Integer.valueOf(operation[1]));
         	}
         	else {
-        		if(operation[1].equals("1")) {
-        			try {
-        				minQueue.remove(maxQueue.poll());
-        			}
-        			catch(Exception e) {};
-        		}
-        		else {
-        			try {
-        				maxQueue.remove(minQueue.poll());
-        			}
-        			catch(Exception e) {};
-        		}
+        		if(operation[1].equals("1")) minQueue.remove(maxQueue.poll());
+        		else maxQueue.remove(minQueue.poll());
         	}
         }
         
