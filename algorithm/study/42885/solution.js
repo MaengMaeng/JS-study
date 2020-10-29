@@ -3,13 +3,8 @@ function solution(people, limit) {
 
     people.sort((a,b) => a - b);
 
-    let left = 0;
-    let right = people.length - 1;
-
     while(people.length > 0){
-        let sum = people.pop();
-
-        while(sum + people[0] <= limit) sum += people.shift();
+        let sum = people.pop() + (sum + people[0] <= limit) ? people.shift() : 0;
         
         answer++;
     }
@@ -18,6 +13,6 @@ function solution(people, limit) {
 }
 
 // const input = [[70, 50, 80, 50]	, 100];
-const input = [[70, 80, 50]	, 100];
+const input = [[10, 20, 30]	, 100];
 
 console.log(solution(...input));
