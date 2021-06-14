@@ -12,6 +12,10 @@ for(let i = 0; i < 5; i++){
     arr[i] = new Array(5);
 }
 ```
+- 배열 초기화 및 이중배열
+```
+const arr = [...Array(length)].map(() => Array(length).fill(0)); //0으로 초기화된 이중배열
+```
 
 - 정렬
 ```
@@ -51,14 +55,16 @@ console.log(b); // a b c
 ## Math
 - 최대값 찾기
 ```
-let i = 0, j = 10;
-console.log(Math.max(i, j)); // j = 10
+let i = 0, j = 10, k = 100;
+console.log(Math.max(i, j, k)); // k = 100
 ```
 
 - 배열의 최대값 찾기
 ```
 let arr = [0, 1, 2, 3, 4, 5];
 console.log(Math.max.apply(null, arr)); // 5
+
+console.log(Math.max(...arr)); // 5
 ```
 
 
